@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: python-docker-app
+      dockerfile: dockerfile
+      # target: builder
+    ports:
+      - "8839:5000"
+    volumes:
+      - "./python:/project"
+      - "/project/__pycache__"
+  
